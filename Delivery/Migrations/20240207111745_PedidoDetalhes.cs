@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace LanchesMac.Migrations
+namespace Delivery.Migrations
 {
     public partial class PedidoDetalhes : Migration
     {

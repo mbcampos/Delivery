@@ -1,6 +1,6 @@
-﻿using LanchesMac.Models;
+﻿using Delivery.Models;
 
-namespace LanchesMac.ViewModels;
+namespace Delivery.ViewModels;
 
 public class LancheListViewModel
 {

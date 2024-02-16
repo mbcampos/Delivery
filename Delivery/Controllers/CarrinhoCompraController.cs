@@ -1,9 +1,9 @@
-﻿using LanchesMac.Models;
-using LanchesMac.ViewModels;
-using LanchesMac.Repositories.Interfaces;
+﻿using Delivery.Models;
+using Delivery.ViewModels;
+using Delivery.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LanchesMac.Controllers 
+namespace Delivery.Controllers 
 {
     public class CarrinhoCompraController : Controller
     {

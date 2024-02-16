@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace LanchesMac.Controllers;
+namespace Delivery.Controllers;
 
 public class AdminController : Controller
 {

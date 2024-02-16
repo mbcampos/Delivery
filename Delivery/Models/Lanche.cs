@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace LanchesMac.Models
+namespace Delivery.Models
 {
     public class Lanche
     {

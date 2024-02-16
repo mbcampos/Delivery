@@ -1,7 +1,7 @@
-﻿using LanchesMac.Models;
+﻿using Delivery.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace LanchesMac.Context
+namespace Delivery.Context
 {
     public class AppDbContext : DbContext
     {

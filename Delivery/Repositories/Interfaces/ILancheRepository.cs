@@ -1,7 +1,7 @@
-﻿using LanchesMac.Context;
-using LanchesMac.Models;
+﻿using Delivery.Context;
+using Delivery.Models;
 
-namespace LanchesMac.Repositories.Interfaces
+namespace Delivery.Repositories.Interfaces
 {
     public interface ILancheRepository
     {

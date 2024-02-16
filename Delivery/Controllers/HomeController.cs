@@ -1,10 +1,10 @@
-﻿using LanchesMac.Models;
-using LanchesMac.Repositories.Interfaces;
-using LanchesMac.ViewModels;
+﻿using Delivery.Models;
+using Delivery.Repositories.Interfaces;
+using Delivery.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace LanchesMac.Controllers
+namespace Delivery.Controllers
 {
     public class HomeController : Controller
     {

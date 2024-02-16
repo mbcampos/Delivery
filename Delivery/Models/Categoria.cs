@@ -1,4 +1,4 @@
-﻿namespace LanchesMac.Models
+﻿namespace Delivery.Models
 {
     public class Categoria
     {

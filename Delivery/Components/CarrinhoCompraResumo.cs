@@ -1,8 +1,8 @@
-﻿using LanchesMac.Models;
-using LanchesMac.ViewModels;
+﻿using Delivery.Models;
+using Delivery.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LanchesMac;
+namespace Delivery;
 
 public class CarrinhoCompraResumo : ViewComponent
 {

@@ -1,9 +1,9 @@
-﻿using LanchesMac.Context;
-using LanchesMac.Models;
-using LanchesMac.Repositories.Interfaces;
+﻿using Delivery.Context;
+using Delivery.Models;
+using Delivery.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace LanchesMac.Repositories
+namespace Delivery.Repositories
 {
     public class LancheRepository : ILancheRepository
     {

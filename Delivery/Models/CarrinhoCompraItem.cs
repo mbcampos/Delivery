@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using LanchesMac.Models;
+using Delivery.Models;
 
-namespace LanchesMac.Models
+namespace Delivery.Models
 {
     [Table("CarrinhoCompraItens")]
     public class CarrinhoCompraItem

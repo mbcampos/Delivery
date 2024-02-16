@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using LanchesMac.Context;
-using LanchesMac.Models;
-using LanchesMac.ViewModels;
+using Delivery.Context;
+using Delivery.Models;
+using Delivery.ViewModels;
 
-namespace LanchesMac.Controllers
+namespace Delivery.Controllers
 {
     public class LanchesController : Controller
     {

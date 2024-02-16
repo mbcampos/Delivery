@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LanchesMac.Models
+namespace Delivery.Models
 {
     public class PedidoDetalhe
     {

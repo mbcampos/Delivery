@@ -1,8 +1,8 @@
-﻿using LanchesMac.Context;
-using LanchesMac.Migrations;
+﻿using Delivery.Context;
+using Delivery.Migrations;
 using Microsoft.EntityFrameworkCore;
 
-namespace LanchesMac.Models
+namespace Delivery.Models
 {
     public class CarrinhoCompra
     {

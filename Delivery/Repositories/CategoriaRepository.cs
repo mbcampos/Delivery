@@ -1,8 +1,8 @@
-﻿using LanchesMac.Context;
-using LanchesMac.Models;
-using LanchesMac.Repositories.Interfaces;
+﻿using Delivery.Context;
+using Delivery.Models;
+using Delivery.Repositories.Interfaces;
 
-namespace LanchesMac.Repositories
+namespace Delivery.Repositories
 {
     public class CategoriaRepository : ICategoriaRepository
     {

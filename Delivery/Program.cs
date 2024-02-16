@@ -1,7 +1,7 @@
-using LanchesMac.Context;
-using LanchesMac.Models;
-using LanchesMac.Repositories;
-using LanchesMac.Repositories.Interfaces;
+using Delivery.Context;
+using Delivery.Models;
+using Delivery.Repositories;
+using Delivery.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 

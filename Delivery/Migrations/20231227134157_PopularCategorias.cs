@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace LanchesMac.Migrations
+namespace Delivery.Migrations
 {
     public partial class PopularCategorias : Migration
     {

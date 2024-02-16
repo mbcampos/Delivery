@@ -1,7 +1,7 @@
-﻿using LanchesMac.Repositories.Interfaces;
+﻿using Delivery.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace LanchesMac.Components
+namespace Delivery.Components
 {
     public class CategoriaMenu : ViewComponent
     {
