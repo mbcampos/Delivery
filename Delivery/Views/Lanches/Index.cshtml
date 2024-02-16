@@ -1,0 +1,16 @@
+﻿@model LanchesMac.ViewModels.LancheListViewModel
+
+<h1>@ViewData["Title"].ToString()</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model.Lanches)
+        {
+            <partial name="_LancheResumo" for="@item" />
+        }
+    </div>
+</div>

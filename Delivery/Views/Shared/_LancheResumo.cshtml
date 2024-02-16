@@ -1,0 +1,25 @@
+﻿@model LanchesMac.Models.Lanche
+
+@* <div class="col-md-4 col-md-4 col-md-4 p-3">
+    <h4>@Html.DisplayNameFor(Model => Model.Nome): @Model.Nome</h4>
+    <p><img src="@Model.ImagemThumbnailUrl" width="150px" /></p>
+    <p>@Html.DisplayNameFor(Model => Model.Preco): @Model.Preco</p>
+    
+    <a asp-action="Details" asp-controller="Lanches" asp-route-id="@Model.LancheId">@Model.Nome</a>
+
+    <p>@Html.DisplayNameFor(Model => Model.DescricaoCurta): @Model.DescricaoCurta</p>
+    <a asp-action="Edit" asp-controller="Lanches" asp-route-id="@Model.LancheId">Edit</a> |
+    <a asp-action="Details" asp-controller="Lanches" asp-route-id="@Model.LancheId">Details</a> |
+    <a asp-action="Delete" asp-controller="Lanches" asp-route-id="@Model.LancheId">Delete</a>
+</div> *@
+
+<div class="card" style="width: 18rem; margin: 10px; padding: 10px;">
+    <img src="@Model.ImagemThumbnailUrl" width="150px">
+    <div class="card-body">
+        <h5 class="card-title">
+            <a asp-action="Edit" asp-controller="Lanches" asp-route-id="@Model.LancheId">@Model.Nome</a>
+        </h5>
+        <p class="card-text">@Model.DescricaoCurta</p>
+        <a class="btn btn-primary" asp-action="AdicionarItemNoCarrinhoCompra" asp-controller="CarrinhoCompra" asp-route-itemId="@Model.LancheId">Adicionar ao carrinho</a>
+    </div>
+</div>

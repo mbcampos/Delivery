@@ -1,0 +1,14 @@
+﻿@model LanchesMac.ViewModels.CarrinhoCompraViewModel
+
+@if (Model.CarrinhoCompra.CarrinhoCompraItens.Count == 0)
+{
+    <span>Carrinho (Vazio)</span>
+}
+else if (Model.CarrinhoCompra.CarrinhoCompraItens.Count == 1)
+{
+    <span>Carrinho (@Model.CarrinhoCompra.CarrinhoCompraItens.Count Item)</span>
+}
+else
+{
+    <span>Carrinho (@Model.CarrinhoCompra.CarrinhoCompraItens.Count Itens)</span>
+}
