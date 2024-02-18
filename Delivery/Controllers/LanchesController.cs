@@ -8,16 +8,19 @@ using Microsoft.EntityFrameworkCore;
 using Delivery.Context;
 using Delivery.Models;
 using Delivery.ViewModels;
+using Delivery.Repositories.Interfaces;
 
 namespace Delivery.Controllers
 {
     public class LanchesController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly ILancheRepository _lancheRepository;
 
-        public LanchesController(AppDbContext context)
+        public LanchesController(AppDbContext context, ILancheRepository lancheRepository)
         {
             _context = context;
+            _lancheRepository = lancheRepository;
         }
 
         // GET: Lanches
@@ -206,6 +209,41 @@ namespace Delivery.Controllers
         private bool LancheExists(int id)
         {
           return (_context.Lanches?.Any(e => e.LancheId == id)).GetValueOrDefault();
+        }
+
+        public ViewResult Search(string searchString)
+        {
+            IEnumerable<Lanche> lanches;
+            String categoriaAtual = String.Empty;
+
+            if (String.IsNullOrEmpty(searchString))
+            {
+                lanches = _lancheRepository.Lanches.OrderBy(p => p.LancheId);
+                categoriaAtual = "Todos os Lanches";
+            }
+            else
+            {
+                lanches = _lancheRepository.Lanches.Where(p => p.Nome.ToLower().Contains(searchString.ToLower()));
+
+                if (lanches.Any())
+                {
+                    categoriaAtual = "Lanches";
+                }
+                else
+                {
+                    categoriaAtual = "Nenhum lanche foi encontrado";
+                }
+            }
+
+            var lancheListViewModel = new LancheListViewModel
+            {
+                Lanches = lanches,
+                CategoriaAtual = categoriaAtual
+            };
+
+            ViewData["Title"] = "Lanches";
+
+            return View("~/Views/Lanches/Index.cshtml", lancheListViewModel);
         }
     }
 }

@@ -18,9 +18,9 @@ namespace Delivery.Repositories
 
         public IEnumerable<Lanche> LanchesPreferidos => _context.Lanches.Where(x => x.IsLanchePreferido).Include(x => x.Categoria);
 
-        public Lanche GetLancheById(int id)
+        public Lanche? GetLancheById(int id)
         {
-            return _context.Lanches.FirstOrDefault(x => x.LancheId == id);
+            return _context?.Lanches?.FirstOrDefault(x => x.LancheId == id);
         }
     }
 }
