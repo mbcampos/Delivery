@@ -20,10 +20,14 @@ namespace Delivery.Models
         [Display(Name = "Endereco")]
         public string Endereco1 { get; set; }
         
-        [StringLength(100)]
         [Display(Name = "Complemento")]
         public string Endereco2 { get; set; }
-        
+
+        [Required(ErrorMessage = "Informe o seu Cep")]
+        [StringLength(8)]
+        [Display(Name = "Cep")]
+        public string Cep { get; set; }
+
         [StringLength(10)]
         public string Estado {  get; set; }
         
@@ -38,7 +42,6 @@ namespace Delivery.Models
         [Required(ErrorMessage = "Informe o email")]
         [StringLength(50)]
         [DataType(DataType.EmailAddress)]
-        [RegularExpression("/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$/", ErrorMessage = "O email não possui um formato correto")]
         public string Email { get; set; }
 
         [ScaffoldColumn(false)] // Indica que não deve aparecer na view
@@ -60,6 +63,6 @@ namespace Delivery.Models
         [DisplayFormat(DataFormatString = "{0: dd/MM/yyyy hh:mm}", ApplyFormatInEditMode = true)]
         public DateTime? PedidoEntregueEm { get; set; }
 
-        public List<PedidoDetalhe> PedidoItens { get; set; }
+        public List<PedidoDetalhe>? PedidoItens { get; set; }
     }
 }
