@@ -2,6 +2,7 @@
 using Delivery.ViewModels;
 using Delivery.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Delivery.Controllers 
 {
@@ -15,7 +16,7 @@ namespace Delivery.Controllers
             _lancheRepository = lancheRepository;
             _carrinhoCompra = carrinhoCompra;
         }
-
+        
         public ActionResult Index()
         {            
             _carrinhoCompra.CarrinhoCompraItens = _carrinhoCompra.GetCarrinhoCompraItens();
@@ -29,6 +30,7 @@ namespace Delivery.Controllers
             return View(carrinhoCompraViewModel);
         }
 
+        [Authorize]
         public IActionResult AdicionarItemNoCarrinhoCompra(int itemId)
         {
             var lancheSelecionado = _lancheRepository.Lanches.FirstOrDefault(x => x.LancheId == itemId);
@@ -41,6 +43,7 @@ namespace Delivery.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         public IActionResult RemoverItemDoCarrinho(int itemId)
         {
             var lancheSelecionado = _lancheRepository.Lanches.FirstOrDefault(x => x.LancheId == itemId);

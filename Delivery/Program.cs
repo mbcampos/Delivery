@@ -2,6 +2,7 @@ using Delivery.Context;
 using Delivery.Models;
 using Delivery.Repositories;
 using Delivery.Repositories.Interfaces;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -13,6 +14,10 @@ builder.Services.AddEntityFrameworkNpgsql()
     .AddDbContext<AppDbContext>(options => 
         options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
     );
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<AppDbContext>()
+    .AddDefaultTokenProviders();
 
 builder.Services.AddTransient<ICategoriaRepository, CategoriaRepository>();
 builder.Services.AddTransient<ILancheRepository, LancheRepository>();
@@ -39,6 +44,7 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseSession();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

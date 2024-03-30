@@ -9,6 +9,7 @@ using Delivery.Context;
 using Delivery.Models;
 using Delivery.ViewModels;
 using Delivery.Repositories.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Delivery.Controllers
 {
@@ -56,25 +57,6 @@ namespace Delivery.Controllers
             return View("Index", lanchesListViewModel);
         }
 
-        // GET: Lanches/Details/5
-        //public async Task<IActionResult> Details(int? id)
-        //{
-        //    if (id == null || _context.Lanches == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var lanche = await _context.Lanches
-        //        .Include(l => l.Categoria)
-        //        .FirstOrDefaultAsync(m => m.LancheId == id);
-        //    if (lanche == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return View(lanche);
-        //}
-
         public async Task<IActionResult> Details(int id)
         {
             if (id == null || _context.Lanches == null)
@@ -92,6 +74,7 @@ namespace Delivery.Controllers
         }
 
         // GET: Lanches/Create
+        [Authorize]
         public IActionResult Create()
         {
             ViewData["CategoriaId"] = new SelectList(_context.Categorias, "CategoriaId", "CategoriaId");
@@ -103,6 +86,7 @@ namespace Delivery.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Create([Bind("LancheId,Nome,DescricaoCurta,DescricaoDetalhada,Preco,ImagemUrl,ImagemThumbnailUrl,IsLanchePreferido,EmEstoque,CategoriaId")] Lanche lanche)
         {
             if (ModelState.IsValid)
@@ -116,6 +100,7 @@ namespace Delivery.Controllers
         }
 
         // GET: Lanches/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Lanches == null)
@@ -137,6 +122,7 @@ namespace Delivery.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Edit(int id, [Bind("LancheId,Nome,DescricaoCurta,DescricaoDetalhada,Preco,ImagemUrl,ImagemThumbnailUrl,IsLanchePreferido,EmEstoque,CategoriaId")] Lanche lanche)
         {
             if (id != lanche.LancheId)
@@ -169,6 +155,7 @@ namespace Delivery.Controllers
         }
 
         // GET: Lanches/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Lanches == null)
@@ -190,6 +177,7 @@ namespace Delivery.Controllers
         // POST: Lanches/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Lanches == null)
