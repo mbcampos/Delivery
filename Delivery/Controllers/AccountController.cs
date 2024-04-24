@@ -66,6 +66,7 @@ public class AccountController : Controller
             if (result.Succeeded)
             {
                 //await _singInManager.SignInAsync(user, isPersistent: false);
+                await _userManager.AddToRoleAsync(user, "Member");
                 return RedirectToAction("Login", "Account");
             }
             else
@@ -84,5 +85,10 @@ public class AccountController : Controller
         HttpContext.User = null;
         await _singInManager.SignOutAsync();
         return RedirectToAction("Index", "Home");
+    }
+
+    public IActionResult AccessDenied()
+    {
+        return View();
     }
 }
